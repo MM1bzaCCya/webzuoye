@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <style>
+        /* 居中对齐 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        /* 图片样式 */
+        .image-container {
+            width: 200px; /* 固定宽度 */
+            height: 200px; /* 固定高度 */
+            overflow: hidden; /* 隐藏超出的部分 */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 等比例缩放，完整展示图片 */
+        }
+
+        /* 注销按钮样式 */
+        .logout-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>欢迎, {{ username }}!</h2>
+
+        <!-- 图片展示区域 -->
+        <div class="image-container">
+            <img src="{{ image_url }}" alt="用户图片">
+        </div>
+
+        <!-- 注销按钮 -->
+        <a href="{{ url_for('logout') }}" class="logout-button">注销</a>
+    </div>
+</body>
+</html>
